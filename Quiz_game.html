@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Game</title>
+  <style>
+    body { font-family: Arial; background: #f9f9f9; text-align: center; margin-top: 50px; }
+    #quiz { border: 2px solid black; width: 300px; padding: 20px; background: white; margin: auto; }
+    .question { font-size: 20px; margin: 20px; }
+    .option { display: block; margin: 10px auto; padding: 10px; width: 200px; }
+    #result { margin-top: 20px; font-weight: bold; }
+    .option {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 200px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.correct {
+  background-color:yellowgreen;   /* turns green */
+}
+.wrong {
+  background-color: red;   /* turns red */
+}
+  </style>
+</head>
+<body>
+  <div id="quiz">
+    <h1>Quiz Game</h1>
+    <div class="question" id="question">which of the follwing is not a javascript datatype</div>
+    <button class="option" id="opt1">string</button>
+    <button class="option" id="opt2">number</button>
+    <button class="option" id="opt3">boolen</button>
+    <button class="option" id="opt4">character</button>
+    <div id="result"></div>
+  </div>
+  <script>
+
+let correctAnswer = "opt4";
+
+document.querySelectorAll(".option").forEach(button => {
+  button.addEventListener("click", function() {
+    if(button.id === correctAnswer) {
+      button.classList.add("correct");
+    } else {
+      button.classList.add("wrong");
+    }
+  });
+});
+  </script>
+</body>
+</html>
